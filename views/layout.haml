@@ -1,0 +1,9 @@
+!!!5
+%html
+  %head
+    %meta{:charset => 'UTF-8'}
+    %title= @title || "Zappos Challenge"
+    %link{:rel => 'stylesheet', :href => '/application.css'}
+  %body
+    #container
+      = yield
