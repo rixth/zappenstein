@@ -38,20 +38,54 @@
       content: 'Z';
     }
   }
+  
+   -webkit-transition-property: -webkit-transform;
+   -webkit-transition-easing: linear;
+   -webkit-transition-duration: 0.7s;
 }
 
 .col:nth-child(1) .slide {
   -webkit-transform: rotateY(8deg);
+  &.flipFrom {
+    -webkit-transform: rotateY(-172deg);
+  }
+  &.flipTo {
+    -webkit-transform: rotateY(-51deg);
+  }
 }
 .col:nth-child(2) .slide {
   -webkit-transform: translateZ(-33px) rotateY(6deg);
+  &.flipFrom {
+    -webkit-transform: translateZ(-33px) rotateY(-174deg);
+  }
+  &.flipTo {
+    -webkit-transform: translateZ(-33px) rotateY(-69deg);
+  }
 }    
 .col:nth-child(3) .slide {
   -webkit-transform: translateZ(-50px);
+  &.flipFrom {
+    -webkit-transform: translateZ(-50px) rotateY(-180deg);
+  }
+  &.flipTo {
+    -webkit-transform: translateZ(-50px) rotateY(-90deg);
+  }
 }
 .col:nth-child(4) .slide {
   -webkit-transform: translateZ(-33px) rotateY(-6deg);
+  &.flipFrom {
+    -webkit-transform: translateZ(-33px) rotateY(-186deg);
+  }
+  &.flipTo {
+    -webkit-transform: translateZ(-33px) rotateY(-111deg);
+  }
 }
 .col:nth-child(5) .slide {
   -webkit-transform: rotateY(-8deg);
+  &.flipFrom {
+    -webkit-transform: rotateY(-188deg);
+  }
+  &.flipTo {
+    -webkit-transform: rotateY(-129deg);
+  }
 }
