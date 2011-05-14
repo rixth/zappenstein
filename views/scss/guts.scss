@@ -1,11 +1,12 @@
 #stage {
-  -webkit-perspective: 700;
-  -webkit-perspective-origin: 50% 0%;
-  -webkit-transform-style: preserve-3d;
+  @include webkit-3d-junk;
+  overflow: hidden;
+  padding-bottom: 20px;
+  
   .col {
-    float: left;
     width: 263px;
     margin-right: 20px;
+    float: left;
     &:first-child {
       margin-left: 2px;
     }
@@ -13,30 +14,26 @@
       margin-right: 0;
     }
   }
-  
-  overflow: hidden;
-  padding-bottom: 20px
 }
 
 .slide {
-  background: #ccc;
-  
-  -webkit-box-shadow: 1px 1px 2px rgba(57, 57, 57, 0.40);
   margin: 20px 0;
   height: 200px;
   padding: 5px;
-
-  overflow: hidden;
-  text-align: justify;
   
+  @include box-shadow(1px, 1px, 2px, rgba(57, 57, 57, 0.40));
+  background: #ccc;
+    
   &.z {
+    padding-top: 35px;
+    height: 165px;
+    
     font-family: 'BebasNeue';
     font-size: 10em;
     color: #aaa;
     text-shadow: -1px -1px 0px #333;
     text-align: center;
-    padding-top: 35px;
-    height: 165px;
+    
     &:before {
       content: 'Z';
     }
@@ -44,7 +41,7 @@
 }
 
 .col:nth-child(1) .slide {
-  -webkit-transform:  rotateY(8deg);
+  -webkit-transform: rotateY(8deg);
 }
 .col:nth-child(2) .slide {
   -webkit-transform: translateZ(-33px) rotateY(6deg);
