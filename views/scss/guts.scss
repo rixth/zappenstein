@@ -1,18 +1,27 @@
 #stage {
-  -webkit-perspective: 400;
-  -webkit-perspective-origin: 50% 100%;
+  -webkit-perspective: 700;
+  -webkit-perspective-origin: 50% 0%;
   -webkit-transform-style: preserve-3d;
   .col {
     float: left;
-    width: 210px;
+    width: 263px;
+    margin-right: 20px;
+    &:first-child {
+      margin-left: 2px;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
   }
+  
+  overflow: hidden;
+  padding-bottom: 20px
 }
 
 .slide {
   background: #ccc;
   
   -webkit-box-shadow: 1px 1px 2px rgba(57, 57, 57, 0.40);
-  width: 300px;
   margin: 20px 0;
   height: 200px;
   padding: 5px;
@@ -35,17 +44,17 @@
 }
 
 .col:nth-child(1) .slide {
-  -webkit-transform: translate3d(0, 0, 0) rotateY(8deg) scale3d(0.75, 1, 1);
+  -webkit-transform: translate3d(105px, 0, 0) rotateY(8deg) scale3d(0.75, 1, 1);
 }
 .col:nth-child(2) .slide {
-  -webkit-transform: translate3d(50px, 0px, -33px) rotateY(6deg) scale3d(0.8, 1, 1);
+  -webkit-transform: translate3d(40px, 0px, -33px) rotateY(6deg) scale3d(0.8, 1, 1);
 }    
 .col:nth-child(3) .slide {
-  -webkit-transform: translate3d(126px, -1px, -50px) scale3d(0.9, 1, 1);
+  -webkit-transform: translate3d(0px, 2px, -50px) scale3d(0.9, 1, 1);
 }
 .col:nth-child(4) .slide {
-  -webkit-transform: translate3d(203px, 0px, -33px) rotateY(-6deg) scale3d(0.8, 1, 1);
+  -webkit-transform: translate3d(-40px, 0px, -33px) rotateY(-6deg) scale3d(0.8, 1, 1);
 }
 .col:nth-child(5) .slide {
-  -webkit-transform: translate3d(255px, 0, 0) rotateY(-8deg) scale3d(0.75, 1, 1);
+  -webkit-transform: translate3d(-105px, 0, 0) rotateY(-8deg) scale3d(0.75, 1, 1);
 }
