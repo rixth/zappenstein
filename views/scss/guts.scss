@@ -1,0 +1,42 @@
+#stage {
+  -webkit-perspective: 400;
+  -webkit-perspective-origin: 50% 50%;
+  -webkit-transform-style: preserve-3d;
+  .col {
+    float: left;
+    width: 210px;
+  }
+}
+
+.slide {
+  border: 1px solid #333; 
+  width: 300px;
+  margin: 20px 0;
+  height: 200px;
+  padding: 5px;
+
+  overflow: hidden;
+  text-align: justify;
+  -webkit-transform-style: preserve-3d;
+}
+
+.col:nth-child(1) .slide {
+  -webkit-transform: translate3d(0, 0, 0) rotateY(8deg) scale3d(0.75, 1, 1);
+  background: red;
+}
+.col:nth-child(2) .slide {
+  -webkit-transform: translate3d(50px, 0px, -33px) rotateY(6deg) scale3d(0.8, 1, 1);
+  background: purple;
+}    
+.col:nth-child(3) .slide {
+  -webkit-transform: translate3d(126px, -1px, -50px) scale3d(0.9, 1, 1);
+  background: green;
+}
+.col:nth-child(4) .slide {
+  -webkit-transform: translate3d(203px, 0px, -33px) rotateY(-6deg) scale3d(0.8, 1, 1);
+  background: cyan;
+}
+.col:nth-child(5) .slide {
+  -webkit-transform: translate3d(255px, 0, 0) rotateY(-8deg) scale3d(0.75, 1, 1);
+  background: yellow;
+}
