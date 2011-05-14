@@ -7,5 +7,9 @@ module ZapposChallenge
     get '/' do
       haml :index
     end
+    
+    get '/application.css' do
+      scss :application, :style => :expanded
+    end
   end
 end
