@@ -4,4 +4,4 @@ require 'bundler'
 Bundler.require
 
 require './app/server'
-run ZapposChallenge::Server
+run Zappenstein::Server

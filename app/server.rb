@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-module ZapposChallenge
+module Zappenstein
   class Server < Sinatra::Base
     set :public, File.dirname(__FILE__) + '/../public'
     
