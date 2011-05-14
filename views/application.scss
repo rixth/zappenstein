@@ -1,6 +1,35 @@
 body {
-  background: url(/images/background.png);
+  background: url(images/background.png);
   font-family: "Myriad Pro", "Helvetica", "Arial", sans-serif;
   margin: 0;
   padding: 0;
+  font-size: 12px;
 }
+
+header {
+  background: #033649;
+  height: 60px;
+  h1 {
+    margin: 0;
+    padding-top: 2px;
+    float: right;
+    font-family: 'BebasNeue';
+    color: #cdb380;
+    text-shadow: 1px 1px 1px rgba(57, 57, 57, .75);
+    font-size: 4em;
+    letter-spacing: 0.10em;
+  }
+}
+
+section {
+  width: 1400px;
+  margin: 0 auto;
+}
+
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('fonts/bebas-neue.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
