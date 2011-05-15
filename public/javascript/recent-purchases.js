@@ -36,14 +36,13 @@
             SlideHelper.viewHelpers.productBar(item)
           ].join(''));
       
-      // All this is so we only show the slide after the map has loaded from
-      // the Big G, otherwise, we get a gross flash in Safari.
-      slide.find('.content').hide();
-      slideContent.find('img.map').bind('load', function () {
-        slide.find('.content').show();
-      });
+      slide.setSlideContent('purchase', slideContent, true);
       
-      slide.setSlideContent('purchase', slideContent);
+      // Only have the slide display when the map is loaded, otherwise
+      // we get a big ugly flash in Safari.
+      slideContent.find('img.map').bind('load', function () {
+        slide.trigger('slideContentReady');
+      });
     });
   }, 2000);
 }());
