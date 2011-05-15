@@ -4,9 +4,14 @@
       - 4.times do |slide_number|
         .slide.z{:id => 'col-' + col_number.to_s + '-slide-' + slide_number.to_s}
           .content
+
 :javascript
+  // Sub-optimal global, but whatevz.
+  var ZAPPOS_API_KEY = '1036d75d74f2ed2b0b5a3beabf0e36bec8149ae2';
+  
   $LAB.script('//ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js')
+    .wait()
     .script('/javascript/slide-manager.js')
     .script('/javascript/data-source.js')
     .wait()
-    .script('/javascript/application.js');
+    .script('/javascript/recent-purchases.js');

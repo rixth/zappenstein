@@ -1,3 +1,8 @@
+/**
+ * This is a very simple object that dictates what columns display what type of
+ * data, and manages *which* slide should be the next to receieve content,
+ * based off how stale the existing data is.
+ */
 var SlideManager = new (function () {
   var columnMapping = ['purchase', 'randomProduct', 'tweet', 'randomProduct', 'purchase'],
       slides = {};
@@ -15,3 +20,19 @@ var SlideManager = new (function () {
     return slide;
   };
 });
+
+/**
+ * A super-simple jQuery plugin to set the content on slides. It applies the
+ * contentChange class, which triggers webkit animations.
+ */
+(function ($) {
+  $.fn.setSlideContent = function (content) {
+    return $(this).each(function () {
+      var slide = $(this);
+      slide.addClass('contentChange');      
+      setTimeout(function () {
+        slide.removeClass('contentChange').find('.content').html(content);
+      }, 600);
+    });
+  }
+}(jQuery));

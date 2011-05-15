@@ -1,3 +1,8 @@
+/**
+ * A generic data source to take advanatage of. It will take care of fetching
+ * new data when there are no items left. It will also check with the specific
+ * source whether or not an item is suitable for rendering.
+ */
 var DataSource = function (options) {
   var items = [],
       loadCallbacks = [];
