@@ -25,18 +25,7 @@
   background: #ccc;
     
   &.z {
-    padding-top: 35px;
-    height: 165px;
-    
-    font-family: 'BebasNeue';
-    font-size: 10em;
-    color: #aaa;
-    text-shadow: -1px -1px 0px #333;
-    text-align: center;
-    
-    &:before {
-      content: 'Z';
-    }
+    background: #ccc url(/images/zappos-z.png) no-repeat center center;
   }
   
   .content {
