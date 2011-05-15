@@ -24,28 +24,16 @@
   var viewHelpers = {
     staticMapTag: function (item) {
       return '<img class="map" src="http://maps.google.com/maps/api/staticmap?center=' + item.zip + ',' + item.state + '&zoom=12&size=263x225&maptype=roadmap&sensor=false"/>';
-    },
-    productBar: function (item) {
-      return [
-        '<div class="productBar">',
-        '  <img src="' + item.defaultImageUrl + '">',
-        '  <div class="productInfo">',
-        '    <div class="brand">' + item.brandName + '</div>',
-        '    <div class="name">' + item.productName + '</div>',
-        '    <div class="price">' + item.price + '</div>',
-        '  </div>',
-        '</div>'
-      ].join('');
     }
   };
   
   // Does the actual rendering of a slide every 2 seconds
   setInterval(function () {
     purchases.getItem(function (item) {
-      var slide = SlideManager.getSlide('purchase'),
+      var slide = SlideHelper.getSlide('purchase'),
           slideContent = $([
             '<div class="staticMap">' + viewHelpers.staticMapTag(item) + '</div>',
-            viewHelpers.productBar(item)
+            SlideHelper.viewHelpers.productBar(item)
           ].join(''));
       
       // All this is so we only show the slide after the map has loaded from
