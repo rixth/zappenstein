@@ -1,9 +1,5 @@
-(function () {
-  setInterval(function (){
-    var slides = $('.slide');
-    slides.eq(Math.round(Math.random() * slides.length)).setSlideContent('<img src="http://maps.google.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=14&size=263x200&maptype=roadmap&sensor=false"/>');
-  }, 1500);
-}());
+// Global. Unawesome.
+var API_KEY = '1036d75d74f2ed2b0b5a3beabf0e36bec8149ae2';
 
 (function ($) {
   $.fn.setSlideContent = function (content) {
@@ -16,3 +12,51 @@
     });
   }
 }(jQuery));
+
+/**
+ * This is the code that 
+ */
+$(function () {
+  var items = [],
+      zipsTracked = [];
+  
+  function fetchData() {
+    $.ajax('http://api.zappos.com/Statistics?type=latestStyles&key=' + API_KEY, {
+      dataType: 'jsonp'
+    }).success(function (data) {
+      items = data.results;
+      render(items.pop());
+    });
+  }
+  
+  function render(item) {
+    var slides = $('.slide');
+    slides.eq(Math.round(Math.random() * slides.length)).setSlideContent('<img src="http://maps.google.com/maps/api/staticmap?center=' + item.zip + ',' + item.state + '&zoom=12&size=263x200&maptype=roadmap&sensor=false"/>');
+
+    if (items.length) {
+      setTimeout(function() {
+        var item = items.pop();
+        while (items.length && zipsTracked.indexOf(item.zip) !== -1) {
+          item = items.pop();
+        }
+        
+        if (!items.length && !item) {
+          // If we're out of items, go fetch some more
+          return fetchData();
+        }
+        
+        zipsTracked.push(item.zip);
+        render(item);
+      }, 1000);
+    } else {
+      
+    }
+  }
+  
+  fetchData();
+  
+  // Clear the zips displayed every 5 minutes
+  setInterval(function () {
+    zipsTracked = [];
+  }, 300000);
+});
