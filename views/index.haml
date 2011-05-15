@@ -2,7 +2,7 @@
   - 5.times do |col_number|
     .col{:class => 'col-' + col_number.to_s}
       - 4.times do |slide_number|
-        .slide.z{:id => 'col-' + col_number.to_s + '-slide-' + slide_number.to_s}
+        .slide{:id => 'col-' + col_number.to_s + '-slide-' + slide_number.to_s}
           .content
 
 :javascript

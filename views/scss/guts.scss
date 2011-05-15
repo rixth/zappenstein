@@ -1,7 +1,7 @@
 #stage {
   @include webkit-3d-junk;
+  padding: 10px 20px;
   overflow: hidden;
-  padding-bottom: 20px;
   
   .col {
     width: 263px;
@@ -20,18 +20,17 @@
   margin: 20px 0;
   height: 200px;
   position: relative;
+  overflow: hidden;
   
   @include box-shadow(1px, 1px, 2px, rgba(57, 57, 57, 0.40));
-  background: #ccc;
-    
-  &.z {
-    background: #ccc url(/images/zappos-z.png) no-repeat center center;
-  }
+  background: #ccc url(/images/zappos-z.png) no-repeat center center;
   
   .content {
     position: absolute;
     top: 0;
     left: 0;
+    width: 263px;
+    height: 200px;
     -webkit-transition-property: opacity;
     -webkit-transition-duration: 0.7s;
   }
