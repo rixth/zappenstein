@@ -11,26 +11,28 @@ var DataSource = function (options) {
   var items = [],
       loadCallbacks = [];
   
-  this.loadData = function (callback, skipCallbackStack) {
-    if (!loadCallbacks.length) {
+  this.loadData = function (callback, isRetry) {
+    if (!loadCallbacks.length || isRetry) {
       var urlIsFunction = typeof(options.url) === 'function';
+      
       $.ajax(urlIsFunction ? options.url() : options.url, {
         dataType: 'jsonp'
       }).success($.proxy(function (data) {
         items = data[options.dataKey || 'results'];
-        
         if (items && (!urlIsFunction || (urlIsFunction && items.length > 5))) {
           loadCallbacks.forEach(function (callback) {
             callback();
           })
           loadCallbacks = [];
         } else {
-          this.loadData(callback, true);
+          setTimeout($.proxy(function () {
+            this.loadData(callback, true);
+          }, this), 1000);
         }
       }, this));
     }
     
-    if (!skipCallbackStack) {
+    if (!isRetry) {
       loadCallbacks.push(callback);
     }
   }
