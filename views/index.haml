@@ -1,6 +1,6 @@
 #stage
-  - 5.times do
-    .col
-      - 4.times do
+  - 5.times do |col_number|
+    .col{:class => 'col-' + col_number.to_s}
+      - 4.times do |slide_number|
         .slide.z
           .content

@@ -17,7 +17,8 @@ var API_KEY = '1036d75d74f2ed2b0b5a3beabf0e36bec8149ae2';
  * This is the code that 
  */
 $(function () {
-  var items = [],
+  var renderEvery = 2000,
+      items = [],
       zipsTracked = [];
   
   function fetchData() {
@@ -30,7 +31,7 @@ $(function () {
   }
   
   function render(item) {
-    var slides = $('.slide');
+    var slides = $('.col-0 .slide, .col-1 .slide');
     slides.eq(Math.round(Math.random() * slides.length)).setSlideContent('<img src="http://maps.google.com/maps/api/staticmap?center=' + item.zip + ',' + item.state + '&zoom=12&size=263x200&maptype=roadmap&sensor=false"/>');
 
     if (items.length) {
@@ -47,7 +48,7 @@ $(function () {
         
         zipsTracked.push(item.zip);
         render(item);
-      }, 1000);
+      }, renderEvery);
     } else {
       
     }
