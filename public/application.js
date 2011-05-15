@@ -1,6 +1,24 @@
 // Global. Unawesome.
 var API_KEY = '1036d75d74f2ed2b0b5a3beabf0e36bec8149ae2';
 
+var SlideManager = new (function () {
+  var columnMapping = ['purchase', 'randomProduct', 'tweet', 'randomProduct', 'purchase'],
+      slides = {};
+  
+  columnMapping.forEach(function (type, colNumber) {
+    slides[type] = slides[type] || [];
+    $('.col-' + colNumber + ' .slide').each(function () {
+      slides[type].push($(this));
+    });
+  });
+  
+  this.getSlide = function (type) {
+    var slide = slides[type].shift();
+    slides[type].push(slide);
+    return slide;
+  };
+});
+
 (function ($) {
   $.fn.setSlideContent = function (content) {
     return $(this).each(function () {
@@ -31,8 +49,7 @@ $(function () {
   }
   
   function render(item) {
-    var slides = $('.col-0 .slide, .col-1 .slide');
-    slides.eq(Math.round(Math.random() * slides.length)).setSlideContent('<img src="http://maps.google.com/maps/api/staticmap?center=' + item.zip + ',' + item.state + '&zoom=12&size=263x200&maptype=roadmap&sensor=false"/>');
+    SlideManager.getSlide('purchase').setSlideContent('<img src="http://maps.google.com/maps/api/staticmap?center=' + item.zip + ',' + item.state + '&zoom=12&size=263x200&maptype=roadmap&sensor=false"/>');
 
     if (items.length) {
       setTimeout(function() {
