@@ -19,7 +19,7 @@
 .slide {
   margin: 20px 0;
   height: 200px;
-  padding: 5px;
+  position: relative;
   
   @include box-shadow(1px, 1px, 2px, rgba(57, 57, 57, 0.40));
   background: #ccc;
@@ -39,53 +39,33 @@
     }
   }
   
-   -webkit-transition-property: -webkit-transform;
-   -webkit-transition-easing: linear;
-   -webkit-transition-duration: 0.7s;
+  .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: 0.7s;
+  }
+  
+  &.contentChange .content {
+    opacity: 0;
+  }
+  
+   
 }
 
 .col:nth-child(1) .slide {
   -webkit-transform: rotateY(8deg);
-  &.flipFrom {
-    -webkit-transform: rotateY(-172deg);
-  }
-  &.flipTo {
-    -webkit-transform: rotateY(-51deg);
-  }
 }
 .col:nth-child(2) .slide {
   -webkit-transform: translateZ(-33px) rotateY(6deg);
-  &.flipFrom {
-    -webkit-transform: translateZ(-33px) rotateY(-174deg);
-  }
-  &.flipTo {
-    -webkit-transform: translateZ(-33px) rotateY(-69deg);
-  }
 }    
 .col:nth-child(3) .slide {
   -webkit-transform: translateZ(-50px);
-  &.flipFrom {
-    -webkit-transform: translateZ(-50px) rotateY(-180deg);
-  }
-  &.flipTo {
-    -webkit-transform: translateZ(-50px) rotateY(-90deg);
-  }
 }
 .col:nth-child(4) .slide {
   -webkit-transform: translateZ(-33px) rotateY(-6deg);
-  &.flipFrom {
-    -webkit-transform: translateZ(-33px) rotateY(-186deg);
-  }
-  &.flipTo {
-    -webkit-transform: translateZ(-33px) rotateY(-111deg);
-  }
 }
 .col:nth-child(5) .slide {
   -webkit-transform: rotateY(-8deg);
-  &.flipFrom {
-    -webkit-transform: rotateY(-188deg);
-  }
-  &.flipTo {
-    -webkit-transform: rotateY(-129deg);
-  }
 }
