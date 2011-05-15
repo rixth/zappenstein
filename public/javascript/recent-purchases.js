@@ -23,16 +23,39 @@
 
   var viewHelpers = {
     staticMapTag: function (item) {
-      return '<img src="http://maps.google.com/maps/api/staticmap?center=' + item.zip + ',' + item.state + '&zoom=12&size=263x200&maptype=roadmap&sensor=false"/>';
+      return '<img class="map" src="http://maps.google.com/maps/api/staticmap?center=' + item.zip + ',' + item.state + '&zoom=12&size=263x225&maptype=roadmap&sensor=false"/>';
+    },
+    productBar: function (item) {
+      return [
+        '<div class="productBar">',
+        '  <img src="' + item.defaultImageUrl + '">',
+        '  <div class="productInfo">',
+        '    <div class="brand">' + item.brandName + '</div>',
+        '    <div class="name">' + item.productName + '</div>',
+        '    <div class="price">' + item.price + '</div>',
+        '  </div>',
+        '</div>'
+      ].join('');
     }
   };
   
   // Does the actual rendering of a slide every 2 seconds
   setInterval(function () {
     purchases.getItem(function (item) {
-      SlideManager.getSlide('purchase').setSlideContent([
-        viewHelpers.staticMapTag(item)
-      ].join(''));
+      var slide = SlideManager.getSlide('purchase'),
+          slideContent = $([
+            '<div class="staticMap">' + viewHelpers.staticMapTag(item) + '</div>',
+            viewHelpers.productBar(item)
+          ].join(''));
+      
+      // All this is so we only show the slide after the map has loaded from
+      // the Big G, otherwise, we get a gross flash in Safari.
+      slide.find('.content').hide();
+      slideContent.find('img.map').bind('load', function () {
+        slide.find('.content').show();
+      });
+      
+      slide.setSlideContent('purchase', slideContent);
     });
   }, 2000);
 }());

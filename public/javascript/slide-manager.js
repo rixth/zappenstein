@@ -26,12 +26,12 @@ var SlideManager = new (function () {
  * contentChange class, which triggers webkit animations.
  */
 (function ($) {
-  $.fn.setSlideContent = function (content) {
+  $.fn.setSlideContent = function (type, content) {
     return $(this).each(function () {
       var slide = $(this);
       slide.addClass('contentChange');      
       setTimeout(function () {
-        slide.removeClass('contentChange').find('.content').html(content);
+        slide.removeClass('contentChange').find('.content').attr('class', type + ' content').html(content);
       }, 600);
     });
   }
