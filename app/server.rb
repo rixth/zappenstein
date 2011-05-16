@@ -11,5 +11,9 @@ module Zappenstein
     get '/application.css' do
       scss :application, :style => :expanded
     end
+    
+    get '/favicon.ico' do
+      status 204
+    end
   end
 end
