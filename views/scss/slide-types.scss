@@ -4,7 +4,10 @@
   bottom: 0;
   width: 244px;
   padding: 10px;
-  text-align: left;
+  color: white;
+  text-shadow: 1px 1px 1px #333;
+  font-weight: bold;
+  
   img {
     max-height: 40px;
     border-radius: 10px;
@@ -14,9 +17,6 @@
   }
   div.productInfo {
     float: left;
-    color: white;
-    text-shadow: 1px 1px 1px #333;
-    font-weight: bold;
     div {
       width: 180px;
       overflow: hidden;
@@ -30,5 +30,15 @@
   .staticMap {
     position: absolute;
     top: 0;
+  }
+}
+
+.picture.content {
+  .img {
+    height: 200px;
+    width: 263px;
+  }
+  a {
+    color: white;
   }
 }

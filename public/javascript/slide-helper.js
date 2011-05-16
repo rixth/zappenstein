@@ -4,7 +4,7 @@
  * based off how stale the existing data is.
  */
 var SlideHelper = new (function () {
-  var columnMapping = ['purchase', 'top', 'tweet', 'top', 'purchase'],
+  var columnMapping = ['purchase', 'picture', 'tweet', 'picture', 'purchase'],
       slides = {};
   
   columnMapping.forEach(function (type, colNumber) {
