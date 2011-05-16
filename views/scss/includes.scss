@@ -1,6 +1,5 @@
 @mixin box-shadow($horz: 1, $vert: 1, $dist: 1, $color: 'black') {
   box-shadow: $horz $vert $dist $color;
-  -moz-box-shadow: $horz $vert $dist $color;
   -webkit-box-shadow: $horz $vert $dist $color;
 }
 
