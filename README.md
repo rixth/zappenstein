@@ -54,3 +54,7 @@ The recent purchase slides show a static map. In Safari, when an image fully loa
 I was counting on using the Statistics/topStyles method in the API, however, I found that often it would not return any data. It appears the time window that it looks at is far too small. For this reason, I subbed in the Flickr API for photos.
 
 I also found that the recent purchases method would often have several results with the same zip code (presumably from the same order). This made for a boring map display, so I implemented a filter that only displays a zip every 60 seconds.
+
+### Flickr photo sizes
+
+Photos can be all shapes and sizes. This was an issue for because I need them to cleanly fit a slide shape. For that reason, I took the medium sized images from Flickr, and used CSS background images to center them in the slide. I also wish there was a random sort but it appears this is not offered.

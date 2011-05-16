@@ -3,15 +3,15 @@
    * The data source for pictures.
    */
   var pictures = (function () {
-    var page = 1,
-        url = 'http://api.flickr.com/services/rest/?method=flickr.photos.search' + 
+    var url = 'http://api.flickr.com/services/rest/?method=flickr.photos.search' + 
               '&format=json&media=photos&extras=owner_name,date_upload,url_m' + 
-              '&text=zappos OR shoes OR clothing&api_key=' + FLICKR_API_KEY +
+              '&text=zappos OR shoes&api_key=' + FLICKR_API_KEY +
               '&page=';
               
     return new DataSource({
       url: function () {
-        return url + (page++);
+        // Pick a random page between 1 and 4001
+        return url + (Math.round(Math.random() * 4000) + 1);
       },
       ajax: {
         jsonp: 'jsoncallback'
