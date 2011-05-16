@@ -9,16 +9,24 @@
  */
 var DataSource = function (options) {
   var items = [],
-      loadCallbacks = [];
+      loadCallbacks = [],
+      defaults = {
+        ajax: {
+          dataType: 'jsonp'
+        },
+        resultsExtractor: function (raw) {
+          return raw.results;
+        }
+      }
+  
+  options = $.extend(true, defaults, options);
   
   this.loadData = function (callback, isRetry) {
     if (!loadCallbacks.length || isRetry) {
       var urlIsFunction = typeof(options.url) === 'function';
       
-      $.ajax(urlIsFunction ? options.url() : options.url, {
-        dataType: 'jsonp'
-      }).success($.proxy(function (data) {
-        items = data[options.dataKey || 'results'];
+      $.ajax(urlIsFunction ? options.url() : options.url, options.ajax).success($.proxy(function (data) {
+        items = options.resultsExtractor(data);
         if (items && (!urlIsFunction || (urlIsFunction && items.length > 5))) {
           loadCallbacks.forEach(function (callback) {
             callback();
