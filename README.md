@@ -52,3 +52,5 @@ The recent purchase slides show a static map. In Safari, when an image fully loa
 ### Zappos API
 
 I was counting on using the Statistics/topStyles method in the API, however, I found that often it would not return any data. It appears the time window that it looks at is far too small. For this reason, I subbed in the Flickr API for photos.
+
+I also found that the recent purchases method would often have several results with the same zip code (presumably from the same order). This made for a boring map display, so I implemented a filter that only displays a zip every 60 seconds.
