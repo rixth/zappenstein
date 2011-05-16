@@ -21,9 +21,8 @@
       }
     });
   }());
-
-
-  setInterval(function () {
+   
+  function renderSingleSlide(triggerNext) {
     pictures.getItem(function (item) {
       var slide = SlideHelper.getSlide('picture'),
           slideContent = $([
@@ -33,9 +32,19 @@
             '  by ' + item.ownername,
             '</div>'
           ].join(''));
-      
+    
       slide.setSlideContent('picture', slideContent, false);
+      
+      if (triggerNext) {
+        setTimeout(function () {
+          renderSingleSlide(true)
+        }, SlideHelper.randomDelay(1, 4));
+      }
     });
-  }, 2000);
+  }
+  
+  // Display 8 slides, and tell the last one to start the render timer
+  for (var i = 0; i < 8; i++) {
+    renderSingleSlide(i === 7);
+  }
 }());
-

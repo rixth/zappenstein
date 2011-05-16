@@ -25,6 +25,12 @@ var SlideHelper = new (function () {
     slides[type].push(slide);
     return slide;
   };
+  
+  // Return a random number of milliseconds between the user provided min/max.
+  // seconds
+  this.randomDelay = function (min, max) {
+    return Math.round((Math.random() * (max - min)) + min) * 1000;
+  }
 });
 
 /**

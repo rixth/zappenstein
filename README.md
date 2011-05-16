@@ -6,9 +6,9 @@ This is my "artists statement" to go along with Zappenstein.
 
 Broadly, the system is comprised of three things. Data sources ("models"), controllers and the slide UI ("view"). I tried to genericise as much code as I could between the three discrete data sources (Zappos, Flickr and Twitter).
 
-The code for fetching data (and more when we run out), handling no results, etc is all abstracted away from the controllers. They only run `DataSource.purchases.getItem`; the rest is handled elsewhere. This helped keep the code cleaner and more readble.
+The code for fetching data (and more when we run out), handling no results, etc is all abstracted away from the controllers. They only run `DataSource.purchases.getItem`; the rest is handled elsewhere. This helped keep the code cleaner and more readable.
 
-The controllers make extensive use of setInterval for timing the rendering of new slides. I am aware that this is slightly slower than stacking setTimeout, but it was easier and quicker to use intervals for this prototype.
+The controllers make originally made extensive use of setInterval for timing the rendering of new slides. However, due to the fact that this is worse performance wise compared to setTimeout, and does not provide the ability to modify the interval, I switched to setTimeout.
 
 ## Technologies used
 

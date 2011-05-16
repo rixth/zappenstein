@@ -39,8 +39,7 @@
     }
   };
   
-  // Does the actual rendering of a slide every 2 seconds
-  setInterval(function () {
+  function renderSingleSlide(triggerNext) {
     purchases.getItem(function (item) {
       var slide = SlideHelper.getSlide('purchase'),
           slideContent = $([
@@ -55,6 +54,17 @@
       slideContent.find('img.map').bind('load', function () {
         slide.trigger('slideContentReady');
       });
+      
+      if (triggerNext) {
+        setTimeout(function () {
+          renderSingleSlide(true)
+        }, SlideHelper.randomDelay(4, 8));
+      }
     });
-  }, 2000);
+  }
+  
+  // Display 8 slides, and tell the last one to start the render timer
+  for (var i = 0; i < 8; i++) {
+    renderSingleSlide(i === 7);
+  }
 }());
