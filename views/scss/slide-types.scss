@@ -24,6 +24,9 @@
       text-overflow: ellipsis;
     }
   }
+  a {
+    color: white;
+  }
 }
 
 .purchase.content {
@@ -37,8 +40,5 @@
   .img {
     height: 200px;
     width: 263px;
-  }
-  a {
-    color: white;
   }
 }

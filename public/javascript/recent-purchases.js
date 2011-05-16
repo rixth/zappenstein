@@ -31,7 +31,7 @@
         '  <img src="' + item.defaultImageUrl + '">',
         '  <div class="productInfo">',
         '    <div class="brand">' + item.brandName + '</div>',
-        '    <div class="name">' + item.productName + '</div>',
+        '    <div class="name"><a target="_blank" href="' + item.defaultProductUrl + '">' + item.productName + '</a></div>',
         '    <div class="price">' + item.price + '</div>',
         '  </div>',
         '</div>'
