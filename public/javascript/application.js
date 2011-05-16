@@ -34,5 +34,25 @@ $(function () {
         });
       });
     }());
+    
+    // Let the user change the perspective by arrowing up and down
+    (function () {
+      var stage = $('#stage');
+      $(document).keydown(function (event) {
+        if ([40, 38].indexOf(event.keyCode) !== -1) {
+          var currentPerspective = +stage.css('-webkit-perspective');
+          if (event.keyCode === 40) {
+            if (currentPerspective * 1.1 < 2000) {
+              stage.css('webkitPerspective', currentPerspective * 1.1);
+            }
+          } else {
+            if (currentPerspective * .9 > 25) {
+              stage.css('webkitPerspective', currentPerspective * .9);
+            }
+          }
+          event.preventDefault();
+        }
+      });
+    }());
   }
 });
