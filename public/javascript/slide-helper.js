@@ -12,6 +12,12 @@ var SlideHelper = new (function () {
     $('.col-' + colNumber + ' .slide').each(function () {
       slides[type].push($(this));
     });
+    
+    // Do a very inefficient shuffle. However, we do this once per load, and
+    // on a max of 8 items, so it's only a little evil.
+    slides[type].sort(function () {
+      return 0.5 - Math.random();
+    });
   });
   
   this.getSlide = function (type) {
