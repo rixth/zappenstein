@@ -28,9 +28,9 @@ $(function () {
       });
       
       stage.mouseleave(function () {
-        return stage.attr('style', '-webkit-transition-duration: 0.3s;');
+        stage.attr('style', '-webkit-transition-duration: 0.3s;');
       }).mouseenter(function () {
-        return stage.attr('style', '');
+        stage.attr('style', '');
       });
     }());
     
