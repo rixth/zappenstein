@@ -6,6 +6,7 @@
 
 @mixin webkit-3d-junk {
   -webkit-perspective: 700;
-  -webkit-perspective-origin: 50% 0%;
+  -webkit-perspective-origin-x: 50%;
+  -webkit-perspective-origin-y: 0%;
   -webkit-transform-style: preserve-3d;
 }

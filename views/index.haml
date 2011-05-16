@@ -11,12 +11,8 @@
       FLICKR_API_KEY = '3a4e62555f54699d49fec517c8de22b4';
   
   $LAB.script('//ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js')
-    .wait(function () {
-      $('#perspective_toggle').click(function () {
-        var body = $('body').toggleClass('my-3d-glasses-are-on');
-        $(this).find('span').html(body.hasClass('my-3d-glasses-are-on') ? 'on' : 'off');
-      }).click();
-    })
+    .wait()
+    .script('/javascript/application.js')
     .script('/javascript/slide-helper.js')
     .script('/javascript/data-source.js')
     .script('/javascript/core-values.js')
