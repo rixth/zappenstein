@@ -28,10 +28,9 @@ $(function () {
       });
       
       stage.mouseleave(function () {
-        stage.css({
-          webkitPerspectiveOriginX: '50%',
-          webkitPerspectiveOriginY: '0%'
-        });
+        return stage.attr('style', '-webkit-transition-duration: 0.3s;');
+      }).mouseenter(function () {
+        return stage.attr('style', '');
       });
     }());
     

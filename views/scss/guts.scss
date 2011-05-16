@@ -4,6 +4,8 @@
   overflow: hidden;
   -webkit-user-select: none;
   
+  -webkit-transition-property: -webkit-perspective-origin-x, -webkit-perspective-origin-y;
+  
   .col {
     width: 263px;
     margin-right: 20px;
