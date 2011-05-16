@@ -56,6 +56,6 @@ I was counting on using the Statistics/topStyles method in the API, however, I f
 
 I also found that the recent purchases method would often have several results with the same zip code (presumably from the same order). This made for a boring map display, so I implemented a filter that only displays a zip every 60 seconds.
 
-### Flickr photo sizes
+### Flickr API
 
-Photos can be all shapes and sizes. This was an issue for because I need them to cleanly fit a slide shape. For that reason, I took the medium sized images from Flickr, and used CSS background images to center them in the slide. I also wish there was a random sort but it appears this is not offered.
+Photos can be all shapes and sizes. This was an issue for because I need them to cleanly fit a slide shape. For that reason, I took the medium sized images from Flickr, and used CSS background images to center them in the slide. I also wish there was a random sort but it appears this is not offered. Finally, users seem incorrectly tag their photos. There are many non-shoe items returned in a search for shoes.
