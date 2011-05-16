@@ -3,20 +3,24 @@
    * The data source for pictures.
    */
   var pictures = (function () {
-    var url = 'http://api.flickr.com/services/rest/?method=flickr.photos.search' + 
+    var pages = 200, // seed with a default value that we'll override
+        url = 'http://api.flickr.com/services/rest/?method=flickr.photos.search' + 
               '&format=json&media=photos&extras=owner_name,date_upload,url_m' + 
-              '&text=zappos OR shoes&api_key=' + FLICKR_API_KEY +
-              '&page=';
+              '&text=zappos&api_key=' + FLICKR_API_KEY +
+              '&per_page=20&page=';
               
     return new DataSource({
       url: function () {
-        // Pick a random page between 1 and 4001
-        return url + (Math.round(Math.random() * 4000) + 1);
+        // Pick a random page
+        return url + (Math.round(Math.random() * pages) + 1);
       },
       ajax: {
         jsonp: 'jsoncallback'
       },
       resultsExtractor: function (rawData) {
+        // This 'technically' shouldn't go here
+        pages = rawData.pages;
+        
         return rawData.photos.photo;
       }
     });

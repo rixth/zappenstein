@@ -61,7 +61,7 @@ I also found that the recent purchases method would often have several results w
 
 ### Flickr API
 
-Photos can be all shapes and sizes. This was an issue for because I need them to cleanly fit a slide shape. For that reason, I took the medium sized images from Flickr, and used CSS background images to center them in the slide. I also wish there was a random sort but it appears this is not offered. Finally, users seem incorrectly tag their photos. There are many non-shoe items returned in a search for shoes.
+Photos can be all shapes and sizes. This was an issue for because I need them to cleanly fit a slide shape. For that reason, I took the medium sized images from Flickr, and used CSS background images to center them in the slide. I also wish there was a random sort but it appears this is not offered. Finally, users seem incorrectly tag their photos. There are many non-Zappos items (I think) returned in a search for Zappos.
 
 ### Modernizr
 
