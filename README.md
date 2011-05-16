@@ -34,6 +34,7 @@ This is probably the area which I feel I learnt most about through making Zappen
 * Web fonts were used. Bebas from FontSquirrel and Merriweather from the Google Font Library.
 * Shotgun is awesome tool for reloading rack-based ruby apps when you change a file.
 * Heroku for hosting
+* I'm using a custom build of Modernizr that detects if the browser can do 3d transforms or not to provide appropriate messaging.
 
 ## Issues encountered
 
