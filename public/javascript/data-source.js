@@ -55,10 +55,10 @@ var DataSource = function (options) {
   }
   
   function callWithItem(callback) {
-    var item = items.pop();
+    var item = items.shift();
     if (options.itemCanBeDisplayed) {
       while (item && !options.itemCanBeDisplayed(item)) {
-        item = items.pop();
+        item = items.shift();
       }
     }
     
