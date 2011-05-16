@@ -2,6 +2,7 @@
   @include webkit-3d-junk;
   padding: 10px 20px;
   overflow: hidden;
+  -webkit-user-select: none;
   
   .col {
     width: 263px;
