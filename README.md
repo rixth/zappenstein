@@ -53,7 +53,7 @@ Originally, I had wanted to have the tiles flip backward, revealing the Zappos l
 
 The recent purchase slides show a static map. In Safari, when an image fully loads, if it has been 3D-transformed, it flickers white for a moment. I resolved this by implementing the slideContentReady event, which allows the slide renderer code to tell the UI that everything is loaded, and to display the slide.
 
-Furthermore, when mousing over a 3d transformed element, mousemove events do not have a reliable layerX/layerY value. They'll randomly bounce back to other incorrect values for a tick here or there.
+Furthermore, when mousing over a 3d transformed element, mousemove events do not have a reliable layerX/layerY value. They'll randomly bounce back to other incorrect values for a tick here or there. For this reason, I moved to calculating the them manually,  based off the clientX/Y values, and the offset of the stage.
 
 ### Zappos API
 
