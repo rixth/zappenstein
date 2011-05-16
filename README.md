@@ -55,6 +55,8 @@ The recent purchase slides show a static map. In Safari, when an image fully loa
 
 Furthermore, when mousing over a 3d transformed element, mousemove events do not have a reliable layerX/layerY value. They'll randomly bounce back to other incorrect values for a tick here or there. For this reason, I moved to calculating the them manually,  based off the clientX/Y values, and the offset of the stage.
 
+It can be very difficult to click links that have been transformed.
+
 ### Zappos API
 
 I was counting on using the Statistics/topStyles method in the API, however, I found that often it would not return any data. It appears the time window that it looks at is far too small. For this reason, I subbed in the Flickr API for photos.
