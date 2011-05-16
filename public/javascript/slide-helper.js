@@ -21,21 +21,6 @@ var SlideHelper = new (function () {
   };
 });
 
-SlideHelper.viewHelpers = {
-  productBar: function (item) {
-    return [
-      '<div class="productBar">',
-      '  <img src="' + item.defaultImageUrl + '">',
-      '  <div class="productInfo">',
-      '    <div class="brand">' + item.brandName + '</div>',
-      '    <div class="name">' + item.productName + '</div>',
-      '    <div class="price">' + item.price + '</div>',
-      '  </div>',
-      '</div>'
-    ].join('');
-  }
-};
-
 /**
  * A  jQuery plugin to set the content on slides. It applies the contentChange
  * class, which triggers webkit animations. It can also wait for the controller

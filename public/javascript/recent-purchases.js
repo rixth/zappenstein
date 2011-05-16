@@ -24,6 +24,18 @@
   var viewHelpers = {
     staticMapTag: function (item) {
       return '<img class="map" src="http://maps.google.com/maps/api/staticmap?center=' + item.zip + ',' + item.state + '&zoom=12&size=263x225&maptype=roadmap&sensor=false"/>';
+    },
+    productBar: function (item) {
+      return [
+        '<div class="productBar">',
+        '  <img src="' + item.defaultImageUrl + '">',
+        '  <div class="productInfo">',
+        '    <div class="brand">' + item.brandName + '</div>',
+        '    <div class="name">' + item.productName + '</div>',
+        '    <div class="price">' + item.price + '</div>',
+        '  </div>',
+        '</div>'
+      ].join('');
     }
   };
   
@@ -33,7 +45,7 @@
       var slide = SlideHelper.getSlide('purchase'),
           slideContent = $([
             '<div class="staticMap">' + viewHelpers.staticMapTag(item) + '</div>',
-            SlideHelper.viewHelpers.productBar(item)
+            viewHelpers.productBar(item)
           ].join(''));
       
       slide.setSlideContent('purchase', slideContent, true);
