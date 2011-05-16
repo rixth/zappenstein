@@ -47,12 +47,14 @@ var SlideHelper = new (function () {
 
       // This code implements waiting for an event to fire before
       // showing the slide.
-      slide.one('slideContentReady', function () {
-        slideIsReady = true;
-        slideReadyCallbacks.forEach(function (callback) {
-          callback();
-        })
-      });
+      if (displayOnEvent) {
+        slide.one('slideContentReady', function () {
+          slideIsReady = true;
+          slideReadyCallbacks.forEach(function (callback) {
+            callback();
+          })
+        });
+      }
       
       // If the slide is ready, or we don't care, fire immediately, else wait
       // for the slideContentReady event
