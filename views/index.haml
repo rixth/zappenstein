@@ -6,7 +6,7 @@
           .content
 
 :javascript
-  // Sub-optimal global, but whatevz.
+  // Sub-optimal globals, but whatevz.
   var ZAPPOS_API_KEY = '1036d75d74f2ed2b0b5a3beabf0e36bec8149ae2',
       FLICKR_API_KEY = '3a4e62555f54699d49fec517c8de22b4';
   
@@ -14,6 +14,7 @@
     .wait()
     .script('/javascript/slide-helper.js')
     .script('/javascript/data-source.js')
+    .script('/javascript/core-values.js')
     .wait()
     .script('/javascript/recent-purchases.js')
     .script('/javascript/pictures.js');

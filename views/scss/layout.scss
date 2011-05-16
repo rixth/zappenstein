@@ -1,6 +1,6 @@
 body {
   background: url(images/background.png);
-  font-family: "Myriad Pro", "Helvetica", "Arial", sans-serif;
+  font-family: 'Myriad Pro', 'Helvetica', 'Arial', sans-serif;
   margin: 0;
   padding: 0;
   font-size: 12px;
@@ -25,4 +25,20 @@ section {
   width: 1440px;
   margin: 0 auto;
   overflow: hidden;
+}
+
+footer {
+  width: 1400px;
+  padding: 10px 20px 20px 20px;
+  margin: 0 auto;
+  
+  font-family: 'Merriweather', sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+  color: #d9cfbf;
+  text-shadow: -1px -1px 1px rgba(57, 57, 57, .40);
+  
+  span {
+    font-weight: normal;
+  }
 }
