@@ -42,3 +42,26 @@
     width: 263px;
   }
 }
+
+.tweet.content {
+  height: 200px;
+  width: 264px;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.35, rgb(235,235,235)),
+    color-stop(1, rgb(255,255,255))
+  );
+    
+  .tweetText {
+    padding: 10px;
+    
+    color: #033649;
+    text-shadow: 1px 1px 1px rgba(57, 57, 57, 0.33);
+    font-size: 1.3em;
+    font-weight: bold;
+    font-family: 'Merriweather', sans-serif;
+    line-height: 1.6em;
+  }
+}

@@ -10,6 +10,8 @@ The code for fetching data (and more when we run out), handling no results, etc 
 
 The controllers make originally made extensive use of setInterval for timing the rendering of new slides. However, due to the fact that this is worse performance wise compared to setTimeout, and does not provide the ability to modify the interval, I switched to setTimeout.
 
+The items are currently rendering using a couple helpers and string concatenation. I decided that using a full blown JS templating language like mustache or jQuery's tmpl would have been overkill.
+
 ## Technologies used
 
 ### Javascript frameworks
@@ -35,6 +37,7 @@ This is probably the area which I feel I learnt most about through making Zappen
 * Shotgun is awesome tool for reloading rack-based ruby apps when you change a file.
 * Heroku for hosting
 * I'm using a custom build of Modernizr that detects if the browser can do 3d transforms or not to provide appropriate messaging.
+* John Resig's prettyDate function for tweet times
 
 ## Issues encountered
 
